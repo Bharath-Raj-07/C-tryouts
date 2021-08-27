@@ -1,0 +1,12 @@
+#include <iostream.h>
+#include <stdio.h>
+int main()
+{
+    int a=5,b=10;
+    printf("The numbers are a=%d and b=%d. \n",a,b);
+    a=a+b;  //(5+10)=15
+    b=a-b;  //(15-10)=5(initally a)
+    a=a-b;  //(15-5)=10(initially b)
+    printf("Swapped numbers are a=%d and b=%d.",a,b);
+    return 0;
+}

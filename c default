@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    printf("Press 1 to support Ronaldo or 2 to support Messi.\n");  
+    scanf("%d",&n);   //to receive user input
+    int a=n;          //saving input in another variable for switch case.
+    switch(a)     
+    {
+        case 1:
+         printf("Ronaldo is the GOAT."); break;
+        case 2:
+         printf("Messi is the GOAT.");break;
+        default: 
+         printf("Both are GOAT");
+    }
+    return 0;
+}

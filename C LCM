@@ -1,0 +1,25 @@
+#include<stdio.h>
+int find_lcm(int, int);       // function declaration
+int find_lcm(int a, int b)    // function definition
+{
+    static int tem=1;    
+    if(tem%a == 0 && tem%b == 0)
+    {
+        return tem;
+    }
+    else
+    {
+        tem++;
+        find_lcm(a,b);
+        return tem;
+    }
+}
+int main()
+{
+    int a, b, lcm;
+    printf("Enter 2 integers to find LCM of:\n");
+    scanf("%d%d",&a,&b);
+    lcm = find_lcm(a,b);      // function call
+    printf("\n LCM of %d and %d is: %d", a, b, lcm);
+    return 0;
+}

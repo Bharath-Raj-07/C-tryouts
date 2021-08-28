@@ -1,0 +1,19 @@
+#include<stdio.h>
+int checksum(int);     // declaring the recursive function
+int checksum(int n)    // function definition
+{
+    if(n==0)
+        return 0;   
+    else
+    {
+        return(n%10+checksum(n/10));  // recursive call
+    }
+}
+int main()
+{
+    int n,sum;
+    printf("Enter a number to find sum of its digits.\n");
+    scanf("%d",&n);
+    sum = checksum(n);
+    printf("\n Sum of digits = %d ",sum);
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() 
+{
+    int i,j;
+    for(i=0;i<=5;i++)         //rows and columns (0,1,2,3,4,5) "=6"
+      {
+          for(j=0;j<=i;j++)  
+           {
+               printf("01");
+           }
+           printf("\n");
+      }
+    return 0;
+}

@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define ROWS 3
+#define COLM 3
+void inputarray(int array[][COLM],int rows,int colm); //input function declaration 
+void printarray(int array[][COLM],int rows,int colm); //output function declaration
+int main()
+{
+    int array[ROWS][COLM];
+    int i,j;
+    printf("Enter elements in %dx%d matrix.\n",ROWS,COLM);
+    inputarray(array,ROWS,COLM);                              //input function call
+    printf("Elements of %dx%d matrix.\n", ROWS,COLM);
+    printarray(array,ROWS,COLM);                            //output function call
+    return 0;
+}
+void inputarray(int array[][COLM],int rows,int colm)  
+{
+    int i,j;
+    for(i=0;i<rows;i++)
+    {
+        for(j=0;j<colm;j++)
+        {
+            scanf("%d",(*(array+i)+j));                      //storing input into array
+        }
+    }
+}
+void printarray(int (*array)[COLM],int rows,int colm)
+{
+    int i,j;
+    int *q,r=0,sum=0;
+    for (i=0;i<rows;i++)
+    {
+        for (j=0;j<colm;j++)
+        {
+            printf("%d ",*(*(array+i)+j));                   // printing elements in array (matrix)
+            q=&array[i][j];
+            if(i==j)                                        //to identify diagonal elements
+            {sum=sum+*q;}                                   //to find sum of diagonal elements
+        }
+        printf("\n");
+    }
+    printf("Sum of diagonals is %d",sum);                   //to print sum
+}
